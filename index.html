@@ -1,0 +1,814 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Evergreen Contracting Services | Luxury Remodeling & Renovation Fairfax, VA</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,600;1,400&family=Montserrat:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    
+    <style>
+        /* CSS RESET & VARIABLES */
+        :root {
+            --primary: #1b3b2b; /* Deep Premium Emerald */
+            --primary-light: #2d5a43;
+            --gold: #c5a880; /* Elegant Warm Gold */
+            --gold-hover: #b39268;
+            --dark: #111111;
+            --light: #f9f8f6;
+            --white: #ffffff;
+            --gray: #666666;
+            --border: #e5e2dd;
+            --font-serif: 'Cormorant Garamond', serif;
+            --font-sans: 'Montserrat', sans-serif;
+            --transition: all 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+        body {
+            font-family: var(--font-sans);
+            background-color: var(--light);
+            color: var(--dark);
+            line-height: 1.6;
+            overflow-x: hidden;
+        }
+
+        a {
+            text-decoration: none;
+            color: inherit;
+            transition: var(--transition);
+        }
+
+        ul {
+            list-style: none;
+        }
+
+        img {
+            max-width: 100%;
+            display: block;
+        }
+
+        /* UTILITIES */
+        .container {
+            width: 100%;
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+
+        .section-padding {
+            padding: 100px 0;
+        }
+
+        .text-center {
+            text-align: center;
+        }
+
+        .luxury-heading {
+            font-family: var(--font-serif);
+            font-size: 2.8rem;
+            font-weight: 600;
+            color: var(--primary);
+            margin-bottom: 15px;
+            letter-spacing: 1px;
+        }
+
+        .luxury-sub {
+            font-size: 0.9rem;
+            text-transform: uppercase;
+            letter-spacing: 3px;
+            color: var(--gold);
+            margin-bottom: 40px;
+            font-weight: 600;
+        }
+
+        .btn-gold {
+            display: inline-block;
+            background-color: var(--gold);
+            color: var(--white);
+            padding: 14px 32px;
+            font-weight: 500;
+            font-size: 0.85rem;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            border: 1px solid var(--gold);
+            cursor: pointer;
+            transition: var(--transition);
+        }
+
+        .btn-gold:hover {
+            background-color: transparent;
+            color: var(--gold);
+            transform: translateY(-3px);
+            box-shadow: 0 10px 20px rgba(197, 168, 128, 0.2);
+        }
+
+        .btn-outline {
+            display: inline-block;
+            background-color: transparent;
+            color: var(--primary);
+            padding: 14px 32px;
+            font-weight: 500;
+            font-size: 0.85rem;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            border: 1px solid var(--primary);
+            cursor: pointer;
+            transition: var(--transition);
+        }
+
+        .btn-outline:hover {
+            background-color: var(--primary);
+            color: var(--white);
+            transform: translateY(-3px);
+        }
+
+        /* HEADER SECTION */
+        header {
+            background-color: var(--white);
+            box-shadow: 0 2px 20px rgba(0,0,0,0.03);
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+            border-bottom: 1px solid var(--border);
+        }
+
+        .header-container {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 15px 20px;
+        }
+
+        .logo-area {
+            display: flex;
+            align-items: center;
+            gap: 15px;
+        }
+
+        .logo-img {
+            height: 60px;
+            width: auto;
+            object-fit: contain;
+        }
+
+        .brand-name {
+            font-family: var(--font-serif);
+            font-size: 1.6rem;
+            font-weight: 600;
+            color: var(--primary);
+            letter-spacing: 0.5px;
+            line-height: 1.2;
+        }
+
+        .nav-menu {
+            display: flex;
+            gap: 30px;
+        }
+
+        .nav-link {
+            font-size: 0.85rem;
+            font-weight: 500;
+            text-transform: uppercase;
+            letter-spacing: 1.5px;
+            color: var(--dark);
+            position: relative;
+            padding: 5px 0;
+        }
+
+        .nav-link::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 0;
+            height: 1px;
+            background-color: var(--gold);
+            transition: var(--transition);
+        }
+
+        .nav-link:hover::after {
+            width: 100%;
+        }
+
+        .nav-link:hover {
+            color: var(--gold);
+        }
+
+        /* HERO SECTION */
+        .hero {
+            position: relative;
+            background: linear-gradient(rgba(17, 17, 17, 0.65), rgba(17, 17, 17, 0.65)), 
+                        url('https://evergreencontractingservices.com/wp-content/uploads/2026/02/5-BA-5-Feb-26.jpg') center/cover no-repeat;
+            height: 85vh;
+            display: flex;
+            align-items: center;
+            color: var(--white);
+        }
+
+        .hero-content {
+            max-width: 700px;
+        }
+
+        .hero h1 {
+            font-family: var(--font-serif);
+            font-size: 4rem;
+            font-weight: 400;
+            line-height: 1.1;
+            margin-bottom: 20px;
+            letter-spacing: 1px;
+        }
+
+        .hero h1 span {
+            font-weight: 600;
+            color: var(--gold);
+        }
+
+        .hero p {
+            font-size: 1.1rem;
+            font-weight: 300;
+            margin-bottom: 35px;
+            letter-spacing: 0.5px;
+            opacity: 0.9;
+        }
+
+        /* ABOUT US SECTION */
+        .about {
+            background-color: var(--white);
+        }
+
+        .about-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 60px;
+            align-items: center;
+        }
+
+        .about-text h2 {
+            font-family: var(--font-serif);
+            font-size: 2.8rem;
+            color: var(--primary);
+            margin-bottom: 20px;
+        }
+
+        .about-text p {
+            color: var(--gray);
+            margin-bottom: 25px;
+            font-size: 1rem;
+            text-align: justify;
+        }
+
+        .about-img-wrapper {
+            position: relative;
+        }
+
+        .about-img {
+            border: 1px solid var(--border);
+            box-shadow: 0 30px 60px rgba(0,0,0,0.05);
+            width: 100%;
+            height: 450px;
+            object-fit: cover;
+        }
+
+        .about-badge {
+            position: absolute;
+            bottom: -20px;
+            left: -20px;
+            background-color: var(--primary);
+            color: var(--white);
+            padding: 30px;
+            font-family: var(--font-serif);
+            text-align: center;
+            box-shadow: 0 15px 30px rgba(0,0,0,0.15);
+        }
+
+        .about-badge .years {
+            font-size: 2.5rem;
+            font-weight: 700;
+            color: var(--gold);
+            display: block;
+            line-height: 1;
+        }
+
+        .about-badge .text {
+            font-size: 0.8rem;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+        }
+
+        /* SERVICES SECTION */
+        .services {
+            background-color: var(--light);
+        }
+
+        .services-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 30px;
+            margin-bottom: 50px;
+        }
+
+        .service-card {
+            background-color: var(--white);
+            border: 1px solid var(--border);
+            overflow: hidden;
+            transition: var(--transition);
+        }
+
+        .service-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 20px 40px rgba(0,0,0,0.05);
+            border-color: var(--gold);
+        }
+
+        .service-img-box {
+            height: 260px;
+            overflow: hidden;
+            position: relative;
+        }
+
+        .service-img-box img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: var(--transition);
+        }
+
+        .service-card:hover .service-img-box img {
+            transform: scale(1.08);
+        }
+
+        .service-info {
+            padding: 30px;
+        }
+
+        .service-info h3 {
+            font-family: var(--font-serif);
+            font-size: 1.6rem;
+            color: var(--primary);
+            margin-bottom: 15px;
+            font-weight: 600;
+        }
+
+        .service-info p {
+            color: var(--gray);
+            font-size: 0.9rem;
+            margin-bottom: 20px;
+            font-weight: 300;
+        }
+
+        /* REVIEWS SECTION */
+        .reviews {
+            background-color: var(--white);
+            position: relative;
+        }
+
+        .reviews-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 30px;
+        }
+
+        .review-card {
+            background-color: var(--light);
+            padding: 40px;
+            border-top: 3px solid var(--gold);
+            box-shadow: 0 10px 30px rgba(0,0,0,0.02);
+        }
+
+        .stars {
+            color: var(--gold);
+            margin-bottom: 15px;
+            font-size: 0.9rem;
+        }
+
+        .review-text {
+            font-style: italic;
+            color: var(--dark);
+            font-size: 0.95rem;
+            margin-bottom: 20px;
+        }
+
+        .reviewer-name {
+            font-weight: 600;
+            font-size: 0.85rem;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            color: var(--primary);
+        }
+
+        /* FAQS SECTION */
+        .faqs {
+            background-color: var(--light);
+        }
+
+        .faq-container {
+            max-width: 800px;
+            margin: 0 auto;
+        }
+
+        .faq-item {
+            background-color: var(--white);
+            border: 1px solid var(--border);
+            margin-bottom: 15px;
+            transition: var(--transition);
+        }
+
+        .faq-question {
+            padding: 22px 30px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            cursor: pointer;
+            font-weight: 500;
+            font-size: 1.05rem;
+            color: var(--primary);
+        }
+
+        .faq-question i {
+            color: var(--gold);
+            transition: var(--transition);
+        }
+
+        .faq-answer {
+            max-height: 0;
+            overflow: hidden;
+            transition: max-height 0.4s cubic-bezier(0, 1, 0, 1);
+            padding: 0 30px;
+            color: var(--gray);
+            font-size: 0.95rem;
+        }
+
+        .faq-item.active .faq-answer {
+            max-height: 1000px;
+            padding-bottom: 25px;
+            transition: max-height 0.4s cubic-bezier(1, 0, 1, 0);
+        }
+
+        .faq-item.active .faq-question i {
+            transform: rotate(180deg);
+        }
+
+        /* FOOTER SECTION */
+        footer {
+            background-color: var(--dark);
+            color: #bcbcbc;
+            font-size: 0.9rem;
+            border-top: 4px solid var(--gold);
+        }
+
+        .footer-top {
+            padding: 80px 0 50px 0;
+            display: grid;
+            grid-template-columns: 1.2fr 0.8fr 1fr 1fr;
+            gap: 40px;
+        }
+
+        .footer-brand h4 {
+            font-family: var(--font-serif);
+            color: var(--white);
+            font-size: 1.8rem;
+            margin-bottom: 20px;
+        }
+
+        .footer-brand p {
+            margin-bottom: 20px;
+            font-weight: 300;
+            line-height: 1.7;
+        }
+
+        .footer-heading {
+            color: var(--white);
+            font-family: var(--font-serif);
+            font-size: 1.3rem;
+            margin-bottom: 25px;
+            position: relative;
+            padding-bottom: 10px;
+            letter-spacing: 0.5px;
+        }
+
+        .footer-heading::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 40px;
+            height: 1px;
+            background-color: var(--gold);
+        }
+
+        .footer-links li {
+            margin-bottom: 12px;
+        }
+
+        .footer-links a {
+            transition: var(--transition);
+            font-weight: 300;
+        }
+
+        .footer-links a:hover {
+            color: var(--gold);
+            padding-left: 5px;
+        }
+
+        .footer-info li {
+            display: flex;
+            align-items: flex-start;
+            gap: 15px;
+            margin-bottom: 18px;
+            font-weight: 300;
+        }
+
+        .footer-info i {
+            color: var(--gold);
+            margin-top: 4px;
+        }
+
+        .map-box {
+            width: 100%;
+            height: 220px;
+            border: 1px solid #333;
+            overflow: hidden;
+        }
+
+        .map-box iframe {
+            width: 100% !important;
+            height: 100% !important;
+        }
+
+        .footer-bottom {
+            background-color: #090909;
+            padding: 25px 0;
+            border-top: 1px solid #222;
+            text-align: center;
+            font-size: 0.8rem;
+            letter-spacing: 1px;
+            text-transform: uppercase;
+        }
+
+        /* RESPONSIVE DESIGN */
+        @media (max-width: 1024px) {
+            .services-grid, .reviews-grid, .footer-top {
+                grid-template-columns: repeat(2, 1fr);
+            }
+            .footer-top {
+                grid-template-columns: repeat(2, 1fr);
+            }
+        }
+
+        @media (max-width: 768px) {
+            .about-grid, .services-grid, .reviews-grid, .footer-top {
+                grid-template-columns: 1fr;
+            }
+            .nav-menu {
+                display: none; /* Simplification for web 2.0 raw preview */
+            }
+            .hero h1 {
+                font-size: 2.5rem;
+            }
+            .luxury-heading {
+                font-size: 2.2rem;
+            }
+            .about-badge {
+                position: static;
+                margin-top: 20px;
+            }
+            .about-img {
+                height: 300px;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <header>
+        <div class="container header-container">
+            <a href="#" class="logo-area">
+                <img src="https://evergreencontractingservices.com/wp-content/uploads/2025/12/Evergreen-Contracting-Services.jpg" alt="Evergreen Contracting Services Logo" class="logo-img">
+                <span class="brand-name">Evergreen<br>Contracting<br>Services</span>
+            </a>
+            <nav>
+                <ul class="nav-menu">
+                    <li><a href="#" class="nav-link">Home</a></li>
+                    <li><a href="#about" class="nav-link">About Us</a></li>
+                    <li><a href="#services" class="nav-link">Services</a></li>
+                    <li><a href="#contact" class="nav-link">Contact Us</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <section class="hero">
+        <div class="container">
+            <div class="hero-content">
+                <h1>Crafting <span>Luxury Homes</span> Across Fairfax County</h1>
+                <p>From bathroom renovations to full-home transformations, Evergreen Contracting Services delivers craftsmanship that lasts. Licensed, EPA-certified, and BBB-accredited — with over two decades of work right here in Fairfax County.
+
+</p>
+                <a href="https://evergreencontractingservices.com/" class="btn-gold">Visit Our Website</a>
+            </div>
+        </div>
+    </section>
+
+    <section id="about" class="about section-padding">
+        <div class="container">
+            <div class="about-grid">
+                <div class="about-img-wrapper">
+                    <img src="https://evergreencontractingservices.com/wp-content/uploads/2026/02/5-BA-5-Feb-26.jpg" alt="Luxury Home Remodeling Craftsmanship" class="about-img">
+                    <div class="about-badge">
+                        <span class="years">21+</span>
+                        <span class="text">Years Of Crafts</span>
+                    </div>
+                </div>
+                <div class="about-text">
+                    <p class="luxury-sub" style="margin-bottom: 10px;">The Evergreen Standard</p>
+                    <h2>About Us</h2>
+                    <p>Evergreen Contracting Services has been improving homes across Fairfax County since 2005. Founded by a tradesman who learned the craft from the ground up — beginning as a carpenter’s apprentice before building a career across residential and commercial construction — Evergreen brings a hands-on standard to every project.</p>
+                    <p>We are not a national franchise or a call-center contractor. We are a local, family-run team that shows up on time, communicates clearly, and takes pride in the finished result. Whether you're updating a single bathroom or renovating your entire home, you'll work directly with experienced professionals from first call to final walkthrough.</p>
+                    <a href="https://evergreencontractingservices.com/about-us/" target="_blank" class="btn-outline">Read More</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="services" class="services section-padding">
+        <div class="container text-center">
+            <h2 class="luxury-heading">Our Renovation Specialists</h2>
+            <p class="luxury-sub">Precision-Engineered Luxury Solutions</p>
+            
+            <div class="services-grid">
+                <div class="service-card">
+                    <div class="service-img-box">
+                        <img src="https://evergreencontractingservices.com/wp-content/uploads/2025/12/unnamed-15-e1766441832383.jpg" alt="Premium Home Remodeling Portfolio">
+                    </div>
+                    <div class="service-info">
+                        <h3>Home Remodeling</h3>
+                        <p>Complete structural refinement tailored to upscale living. From custom walls, high-end layouts, down to modern architectural fixture additions.</p>
+                    </div>
+                </div>
+
+                <div class="service-card">
+                    <div class="service-img-box">
+                        <img src="https://evergreencontractingservices.com/wp-content/uploads/2026/01/IMG_5187-2048x1536.jpg" alt="Elite Flooring Installation Luxury">
+                    </div>
+                    <div class="service-info">
+                        <h3>Flooring Installation</h3>
+                        <p>Masterfully aligned premium hardwoods, modern luxury laminates, and pristine custom tile work carefully planned for lasting resilience.</p>
+                    </div>
+                </div>
+
+                <div class="service-card">
+                    <div class="service-img-box">
+                        <img src="https://evergreencontractingservices.com/wp-content/uploads/2026/02/5-BA-5-Feb-26.jpg" alt="General Renovation Masterpieces">
+                    </div>
+                    <div class="service-info">
+                        <h3>General Renovation</h3>
+                        <p>Whole-home transformations providing modern layouts, better functional flow, and pristine detailing inside and out.</p>
+                    </div>
+                </div>
+            </div>
+
+            <a href="https://evergreencontractingservices.com/services/" target="_blank" class="btn-gold">Explore All Services</a>
+        </div>
+    </section>
+
+    <section class="reviews section-padding">
+        <div class="container text-center">
+            <h2 class="luxury-heading">Client Reviews</h2>
+            <p class="luxury-sub">What Our Clients Say</p>
+            
+            <div class="reviews-grid text-center">
+                <div class="review-card">
+                    <div class="stars"><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i></div>
+                    <p class="review-text">"Every single project that the team has done has been excellent! He and his team are very communicative and quality is top notch."</p>
+                    <p class="reviewer-name">- Sarah M.</p>
+                </div>
+                <div class="review-card">
+                    <div class="stars"><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i></div>
+                    <p class="review-text">"Evergreen Contracting Services is fantastic. They show up on time, maintain pristine clean spaces while working, and bring true artistry."</p>
+                    <p class="reviewer-name">- Micheal</p>
+                </div>
+                <div class="review-card">
+                    <div class="stars"><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i></div>
+                    <p class="review-text">"Outstanding attention to detail on our kitchen and custom flooring remodel. David and his tradesmen set a standard very rarely seen nowadays."</p>
+                    <p class="reviewer-name">- Hunter H.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="faqs section-padding">
+        <div class="container">
+            <div class="text-center">
+                <h2 class="luxury-heading">Frequently Asked Questions</h2>
+                <p class="luxury-sub">Got Questions? We Have Answers</p>
+            </div>
+            
+            <div class="faq-container">
+                <div class="faq-item">
+                    <div class="faq-question">What is your primary service area? <i class="fas fa-chevron-down"></i></div>
+                    <div class="faq-answer">
+                        <p>We proudly serve Fairfax County, Arlington County, Prince William County, Loudoun County, and surrounding Northern Virginia areas including Burke, Vienna, Alexandria, and Falls Church.</p>
+                    </div>
+                </div>
+                <div class="faq-item">
+                    <div class="faq-question">Are you fully licensed and certified? <i class="fas fa-chevron-down"></i></div>
+                    <div class="faq-answer">
+                        <p>Yes, Evergreen Contracting Services LLC holds a Class "B" Home Improvements license with VA DPOR (License #2705105936) and is an EPA Lead Certified Renovator with an A+ BBB Accreditation rating.</p>
+                    </div>
+                </div>
+                <div class="faq-item">
+                    <div class="faq-question">How do your quotes and consulting process work? <i class="fas fa-chevron-down"></i></div>
+                    <div class="faq-answer">
+                        <p>We evaluate your complete home layout and understand your renovation goals before starting any physical work to ensure precise alignment. We offer free, clear, no-pressure in-home estimates.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <footer id="contact">
+        <div class="container footer-top">
+            <div class="footer-brand">
+                <h4>Evergreen Contracting</h4>
+                <p>Improving structural beauty, layout integrity, and elegant day-to-day living functionality across Northern Virginia since 2005.</p>
+                <div class="map-box">
+                    <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2985.1659710163826!2d-77.2341388!3d38.866476299999995!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x89b64d849309b4af%3A0xa38c1f73c95a5a9e!2sEvergreen%20Contracting%20Services!5e1!3m2!1sen!2s!4v1782854459653!5m2!1sen!2s" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="strict-origin-when-cross-origin"></iframe>
+                </div>
+            </div>
+            
+            <div>
+                <h4 class="footer-heading">Quick Links</h4>
+                <ul class="footer-links">
+                    <li><a href="#">Home</a></li>
+                    <li><a href="#about">About Us</a></li>
+                    <li><a href="#services">Services</a></li>
+                    <li><a href="#contact">Contact</a></li>
+                </ul>
+            </div>
+
+            <div>
+                <h4 class="footer-heading">Working Hours</h4>
+                <ul class="footer-links" style="pointer-events: none;">
+                    <li>Monday - Sunday</li>
+                    <li style="color: var(--gold); font-weight: 500;">7:30 AM – 7:30 PM</li>
+                    <li style="margin-top: 15px;">Available for Scheduled Appointments & Emergency consultations.</li>
+                </ul>
+            </div>
+
+            <div>
+                <h4 class="footer-heading">Contact Info</h4>
+                <ul class="footer-info">
+                    <li>
+                        <i class="fas fa-map-marker-alt"></i>
+                        <span>3060 Williams Drive, Suite 300,<br>Fairfax, VA 22031 USA</span>
+                    </li>
+                    <li>
+                        <i class="fas fa-phone-alt"></i>
+                        <a href="tel:7032445263">(703) 244-5263</a>
+                    </li>
+                    <li>
+                        <i class="fas fa-envelope"></i>
+                        <a href="mailto:evergreencontractingservices@yahoo.com" style="word-break: break-all;">evergreencontractingservices@yahoo.com</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+        
+        <div class="footer-bottom">
+            <div class="container">
+                © 2026 The Ranking Geeks. All Rights Reserved.
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        const faqItems = document.querySelectorAll('.faq-item');
+        
+        faqItems.forEach(item => {
+            const question = item.querySelector('.faq-question');
+            question.addEventListener('click', () => {
+                // Close other items if open
+                faqItems.forEach(otherItem => {
+                    if(otherItem !== item) {
+                        otherItem.classList.remove('active');
+                    }
+                });
+                // Toggle current item
+                item.classList.toggle('active');
+            });
+        });
+    </script>
+</body>
+</html>
